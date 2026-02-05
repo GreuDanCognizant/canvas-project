@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Canvas Drag</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <aside> 
+    <h3>Shape Controls</h3> 
+
+    <label> Shape: 
+      <select id="shape-select"> 
+        <option value="square">Square</option> 
+        <option value="circle">Circle</option> 
+        <option value="triangle">Triangle</option> 
+      </select> 
+    </label> 
+
+    <label> Size: 
+      <input id="shape-size" type="number" value="80" min="10" max="300"> 
+    </label> 
+
+    <label> Color: 
+      <input id="shape-color" type="color" value="#ff0000"> 
+    </label> 
+
+    <button id="insert-shape">Insert Shape</button> 
+    <hr> 
+
+    <div id="event-panel" class="event-panel" aria-live="polite" aria-atomic="false">
+    <header class="panel-header">System Status</header>
+
+    <ul id="event-list" class="event-list">
+      <li><strong>Pointer on canvas:</strong> <span id="status-pointer">no</span></li>
+      <li><strong>Canvas size:</strong> <span id="status-canvas-size"></span></li>
+      <li><strong>Window size:</strong> <span id="status-window-size"></span></li>
+      <li><strong>Pointer Coords:</strong> <span id="status-pointer-coords"></span></li>
+    </ul>
+    </div>
+  </aside>
+
+  <div class="wrap">
+    <canvas id="canvas" aria-label="Draggable squares canvas"></canvas>
+  </div>
+
+  <script type="module" src="./dist/main.js" defer></script>
+</body>
+</html>

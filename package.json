@@ -1,0 +1,15 @@
+{
+  "name": "canvas-drag-simple",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc --watch",
+    "serve": "npx serve ."
+  },
+  "devDependencies": {
+    "typescript": "^5.0.0",
+    "serve": "^14.0.0"
+  }
+}

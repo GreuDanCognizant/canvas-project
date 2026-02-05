@@ -1,0 +1,64 @@
+#canvas {
+  border: 1px solid #ccc;
+  background: white;
+  display: flex;
+  border-radius: 10px;
+}
+
+.wrap {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 20px;
+  height: 400px;
+}
+
+aside {
+  width: 20%;
+  padding: 12px 12px 12px 12px;
+  border: 5px solid #6713d5;
+  background: rgb(39, 107, 180);
+  color: black;
+  border-radius: 10px;
+  margin-left: 20px;
+  margin-top: 20px;
+}
+aside strong {
+  color: black;
+}
+aside #insert-shape {
+  width: -moz-fit-content;
+  width: fit-content;
+  height: 30px;
+  margin-top: 10px;
+  background: linear-gradient(120deg, lightgreen, skyblue);
+  border-radius: 9px;
+}
+aside #insert-shape :hover {
+  background: 90deg, skyblue, lightgreen;
+}
+
+.event-panel {
+  margin-top: 20px;
+  max-height: 200px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  padding: 6px;
+  background: #fff;
+  border-radius: 9px;
+}
+
+.event-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  margin: 0;
+  font-family: sans-serif;
+  display: flex;
+  background: linear-gradient(90deg, blue, skyblue);
+  align-items: stretch;
+}/*# sourceMappingURL=style.css.map */

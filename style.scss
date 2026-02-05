@@ -1,0 +1,12 @@
+@use "./src/style/canvas" as *;
+@use "./src/style/event-pannel" as *;
+
+body {
+  margin: 0;
+  font-family: sans-serif;
+  display: flex;
+  background: linear-gradient(90deg,blue, skyblue);
+  align-items: stretch;
+}
+
+

@@ -1,0 +1,15 @@
+#canvas { 
+    border:1px solid #ccc; 
+    background:white; 
+    display:flex;
+    border-radius: 10px;
+}
+
+.wrap {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start; 
+  justify-content: center;
+  padding: 20px;
+  height: 400px;
+}

@@ -1,0 +1,40 @@
+import { Shape } from "./shapes.js";
+
+export class Square extends Shape {
+  edge: number;
+
+  constructor(x: number, y: number, edge: number, color: string) {
+    super(x, y, color);
+    this.edge = edge;
+  }
+
+  draw(ctx: CanvasRenderingContext2D) {
+    ctx.save();
+
+    ctx.fillStyle = this.active ? this.activeColor : this.color;
+    ctx.fillRect(this.x, this.y, this.edge, this.edge);
+
+    if (this.selected) {
+      ctx.lineWidth = 2;
+      ctx.strokeStyle = this.activeColor2;
+      ctx.strokeRect(this.x, this.y, this.edge, this.edge);
+    }
+
+    if (this.active) {
+      const cx = this.x + this.edge / 2;
+      const cy = this.y + this.edge / 2;
+      this.drawCoords(ctx, cx, cy);
+    }
+
+    ctx.restore();
+  }
+
+  contains(px: number, py: number) {
+    return (
+      px > this.x &&
+      px < this.x + this.edge &&
+      py > this.y &&
+      py < this.y + this.edge
+    );
+  }
+}

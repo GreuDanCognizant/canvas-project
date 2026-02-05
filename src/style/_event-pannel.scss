@@ -1,0 +1,42 @@
+aside {
+  width: 20%;
+  padding: 12px 12px 12px 12px;
+  border: 5px solid #6713d5;
+  background: rgb(39, 107, 180);
+  color: black;
+  border-radius: 10px;
+  margin-left: 20px;
+  margin-top: 20px;
+
+  strong{
+    color: black
+  }
+
+  #insert-shape{
+    width: fit-content;
+    height:30px;
+    margin-top: 10px;
+    background: linear-gradient(120deg,lightgreen,skyblue);
+    border-radius: 9px;
+  }
+
+  #insert-shape :hover{
+        background: (90deg,skyblue,lightgreen);
+   }
+}
+
+.event-panel {
+  margin-top: 20px;
+  max-height: 200px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  padding: 6px;
+  background: #fff;
+  border-radius: 9px;
+}
+
+.event-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
