@@ -6,6 +6,7 @@ const shapeSelect = document.getElementById("shape-select") as HTMLSelectElement
 const sizeInput = document.getElementById("shape-size") as HTMLInputElement;
 const colorInput = document.getElementById("shape-color") as HTMLInputElement;
 const insertBtn = document.getElementById("insert-shape") as HTMLButtonElement;
+const clearBtn = document.getElementById("clear-canvas") as HTMLButtonElement;
 
 insertBtn.addEventListener("click", () => {
   const type = shapeSelect.value;
@@ -14,3 +15,7 @@ insertBtn.addEventListener("click", () => {
 
   manager.addShape(type, size, color);
 });
+
+clearBtn.addEventListener('click', () => {
+  manager.clear();
+})

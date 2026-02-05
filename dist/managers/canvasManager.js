@@ -92,5 +92,9 @@ export class CanvasManager {
             this.shapes.push(shape);
         }
     }
+    clear() {
+        this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+        this.shapes = [];
+    }
 }
 //# sourceMappingURL=canvasManager.js.map

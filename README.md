@@ -16,3 +16,9 @@ This helps monitor how the interface behaves during interaction.
 On the right side, the canvas is the area where shapes are drawn. 
 Each shape is created based on the selected settings and can be moved around afterward. 
 A hit‑testing system identifies which shape is under the cursor, and the overlap logic detects when shapes collide or intersect while being dragged.
+
+Ca si recomandari ar fi sa creezi si tu un fisier cu .gitignore ca sa nu mai adaugi toate fisierele inutile in proiect.
+Partea de design e putin cam rudimentara.
+Nu poti insera o forma unde vrei tu ci e pusa random in canvas.
+
+Ti-am facut cadou un buton de clear pentru canvas.
