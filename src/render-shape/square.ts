@@ -3,9 +3,9 @@ import { Shape } from "./shapes.js";
 export class Square extends Shape {
   edge: number;
 
-  constructor(x: number, y: number, edge: number, color: string) {
-    super(x, y, color);
-    this.edge = edge;
+  constructor(data:ShapeConstructor) {
+    super(data.x, data.y, data.color);
+    this.edge = data.edge;
   }
 
   draw(ctx: CanvasRenderingContext2D) {
@@ -23,7 +23,7 @@ export class Square extends Shape {
     if (this.active) {
       const cx = this.x + this.edge / 2;
       const cy = this.y + this.edge / 2;
-      this.drawCoords(ctx, cx, cy);
+      this.drawCoords({ctx, cx, cy});
     }
 
     ctx.restore();

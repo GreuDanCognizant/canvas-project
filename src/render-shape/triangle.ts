@@ -3,9 +3,9 @@ import { Shape } from "./shapes.js";
 export class Triangle extends Shape {
   edge: number;
 
-  constructor(x: number, y: number, edge: number, color: string) {
-    super(x, y, color);
-    this.edge = edge;
+  constructor(data:ShapeConstructor) {
+    super(data.x, data.y, data.color);
+    this.edge = data.edge;
   }
 
   private verts() {
@@ -38,7 +38,7 @@ export class Triangle extends Shape {
     if (this.active) {
       const cx = (a.x + b.x + c.x) / 3;
       const cy = (a.y + b.y + c.y) / 3;
-      this.drawCoords(ctx, cx, cy);
+      this.drawCoords({ctx, cx, cy});
     }
 
     ctx.restore();

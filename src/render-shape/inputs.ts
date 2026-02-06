@@ -1,4 +1,4 @@
-import { CanvasManager } from "../managers/canvasManager";
+import { CanvasManager } from "../managers/canvas-manager";
 import { Triangle } from "./triangle";
 import { Circle } from "./circle";
 import { Square } from "./square";

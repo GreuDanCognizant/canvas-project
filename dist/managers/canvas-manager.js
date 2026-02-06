@@ -2,7 +2,7 @@ import { drawGrid } from "../render-shape/draw.js";
 import { Square } from "../render-shape/square.js";
 import { Circle } from "../render-shape/circle.js";
 import { Triangle } from "../render-shape/triangle.js";
-import { LogPanel } from "./logPannel.js";
+import { LogPanel } from "./log-panel.js";
 import { InputHandler } from "../render-shape/inputs.js";
 export class CanvasManager {
     constructor(canvasId) {
@@ -61,11 +61,11 @@ export class CanvasManager {
         this.ctx.setTransform(ratio, 0, 0, ratio, 0, 0);
         this.size.width = cssW;
         this.size.height = cssH;
-        drawGrid(this.ctx, cssW, cssH);
+        drawGrid({ ctx: this.ctx, cx: cssW, cy: cssH });
     }
     render() {
         const { width, height } = this.size;
-        drawGrid(this.ctx, width, height);
+        drawGrid({ ctx: this.ctx, cx: width, cy: height });
         for (const s of this.shapes) {
             s.draw(this.ctx);
         }
@@ -75,22 +75,22 @@ export class CanvasManager {
         let x = Math.random() * (this.size.width - size);
         let y = Math.random() * (this.size.height - size);
         for (let shape of this.shapes) {
-            if (Math.sqrt(shape.x ** 2 + shape.y ** 2) > x)
-                x = x + Math.sqrt(shape.x ** 2 + shape.y ** 2);
+            if (Math.sqrt(shape.x ^ 2 + shape.y ^ 2) > x)
+                x = x + Math.sqrt(shape.x ^ 2 + shape.y ^ 2);
         }
         let shape;
         if (type === "square") {
-            shape = new Square(x, y, size, color);
+            shape = new Square({ x, y, edge: size, color });
         }
         else if (type === "circle") {
-            shape = new Circle(x, y, size / 2, color);
+            shape = new Circle({ x, y, edge: size / 2, color });
         }
         else if (type === "triangle") {
-            shape = new Triangle(x, y, size, color);
+            shape = new Triangle({ x, y, edge: size, color });
         }
         if (shape) {
             this.shapes.push(shape);
         }
     }
 }
-//# sourceMappingURL=canvasManager.js.map
+//# sourceMappingURL=canvas-manager.js.map
