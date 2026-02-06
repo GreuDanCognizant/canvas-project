@@ -24,22 +24,22 @@ export abstract class Shape {
     );
   }
 
-  protected drawCoords(ctx: CanvasRenderingContext2D, cx: number, cy: number) {
-    ctx.save();
-    ctx.translate(cx, cy);
+  protected drawCoords(coords:DrawCoords) {
+    coords.ctx.save();
+    coords.ctx.translate(coords.cx, coords.cy);
 
-    ctx.fillStyle = this.activeColor;
-    ctx.fillRect(-45, -7, 30, 14);
-    ctx.fillStyle = "white";
-    ctx.fillText(Math.floor(this.x).toString(), -30, 0);
+    coords.ctx.fillStyle = this.activeColor;
+    coords.ctx.fillRect(-45, -7, 30, 14);
+    coords.ctx.fillStyle = "white";
+    coords.ctx.fillText(Math.floor(this.x).toString(), -30, 0);
 
-    ctx.rotate(Math.PI / 2);
-    ctx.fillStyle = this.activeColor;
-    ctx.fillRect(-45, -7, 30, 14);
-    ctx.fillStyle = "white";
-    ctx.fillText(Math.floor(this.y).toString(), -30, 0);
+    coords.ctx.rotate(Math.PI / 2);
+    coords.ctx.fillStyle = this.activeColor;
+    coords.ctx.fillRect(-45, -7, 30, 14);
+    coords.ctx.fillStyle = "white";
+    coords.ctx.fillText(Math.floor(this.y).toString(), -30, 0);
 
-    ctx.restore();
+    coords.ctx.restore();
   }
 
   abstract draw(ctx: CanvasRenderingContext2D): void;

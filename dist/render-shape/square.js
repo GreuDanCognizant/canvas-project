@@ -1,8 +1,8 @@
 import { Shape } from "./shapes.js";
 export class Square extends Shape {
-    constructor(x, y, edge, color) {
-        super(x, y, color);
-        this.edge = edge;
+    constructor(data) {
+        super(data.x, data.y, data.color);
+        this.edge = data.edge;
     }
     draw(ctx) {
         ctx.save();
@@ -16,7 +16,7 @@ export class Square extends Shape {
         if (this.active) {
             const cx = this.x + this.edge / 2;
             const cy = this.y + this.edge / 2;
-            this.drawCoords(ctx, cx, cy);
+            this.drawCoords({ ctx, cx, cy });
         }
         ctx.restore();
     }

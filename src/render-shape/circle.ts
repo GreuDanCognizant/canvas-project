@@ -3,9 +3,9 @@ import { Shape } from "./shapes.js";
 export class Circle extends Shape {
   radius: number;
 
-  constructor(x: number, y: number, radius: number, color: string) {
-    super(x, y, color);
-    this.radius = radius;
+  constructor(data:ShapeConstructor) {
+    super(data.x, data.y, data.color);
+    this.radius = data.edge;
   }
 
   get edge() {
@@ -31,7 +31,7 @@ export class Circle extends Shape {
       ctx.stroke();
     }
 
-    if (this.active) this.drawCoords(ctx, cx, cy);
+    if (this.active) this.drawCoords({ctx, cx, cy});
 
     ctx.restore();
   }

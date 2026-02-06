@@ -1,4 +1,4 @@
-import { CanvasManager } from "./managers/canvasManager.js";
+import { CanvasManager } from "./managers/canvas-manager.js";
 
 const manager = new CanvasManager("canvas");
 
